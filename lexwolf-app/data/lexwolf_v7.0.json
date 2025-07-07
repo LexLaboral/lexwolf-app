@@ -1,0 +1,291 @@
+{
+  "perfil_general": {
+    "rol": "Abogado laboral – fundador de LexLaboral",
+    "modo_operacion": "Casos trabajadores + asesoría empresas + fiscal-administrativo + scripts audiencia + sistemas avanzados",
+    "estilo": "Directo, estratégico, sin jergas, lenguaje claro",
+    "zonas_operacion": ["Nuevo León", "Tamaulipas", "Veracruz"],
+    "version_sistema": "7.0.0-ULTIMATE",
+    "fecha_actualizacion": "2025-07-06"
+  },
+
+  "modulos_tacticos_ultimate": {
+    "MOD033": {
+      "id": "MOD033",
+      "nombre": "estrategia_anti_evasion_empresarial_multiple",
+      "categoria": "procedimiento_laboral_avanzado",
+      "nivel_complejidad": "experto",
+      "activadores": [
+        "outsourcing", "multiple_entidades", "casino_entretenimiento", 
+        "cambio_razon_social", "estructura_empresarial_compleja"
+      ],
+      "efectividad_historica": 92.0,
+      "descripcion": "Estrategia anti-evasión empresarial múltiple con cláusula 'A QUIEN RESULTE RESPONSABLE'",
+      "keywords_activacion": ["outsourcing", "multiple_entidades", "casino", "cambio_razon_social"],
+      "patron_makario_core": true
+    },
+    
+    "MOD034": {
+      "id": "MOD034", 
+      "nombre": "nulidad_preventiva_documentos_blanco",
+      "categoria": "evidencia_defensiva",
+      "nivel_complejidad": "intermedio",
+      "activadores": [
+        "firma_documentos_inicio", "instrucciones_firma_ciega", 
+        "documentos_sin_contenido", "firma_todo_sin_leer"
+      ],
+      "efectividad_historica": 88.0,
+      "descripcion": "Neutralizar fabricación posterior de documentos mediante solicitud de nulidad desde demanda inicial",
+      "keywords_activacion": ["documentos_blanco", "firma_ciega", "documentos_sin_contenido"],
+      "patron_makario_core": true
+    },
+
+    "MOD051": {
+      "id": "MOD051",
+      "nombre": "respuesta_sistematica_requerimientos_SAT", 
+      "categoria": "fiscal_administrativo",
+      "nivel_complejidad": "intermedio",
+      "activadores": [
+        "requerimiento_SAT", "verificacion_domicilio", 
+        "solicitud_informacion_SAT", "auditoria_fiscal"
+      ],
+      "efectividad_historica": 95.0,
+      "descripcion": "Respuesta completa y sistemática a requerimientos SAT con documentación preventiva integral",
+      "keywords_activacion": ["SAT", "requerimiento", "verificacion_domicilio", "NUT"],
+      "origen": "v5.0_expansion"
+    },
+
+    "MOD048": {
+      "id": "MOD048",
+      "nombre": "neutralizacion_arsenal_defensivo_patronal",
+      "categoria": "contradefensa_laboral", 
+      "nivel_complejidad": "experto",
+      "activadores": [
+        "contestacion_patronal", "ofrecimiento_mejorado", 
+        "abandono_trabajo", "teoria_abandono_aplicada"
+      ],
+      "efectividad_historica": 90.0,
+      "descripcion": "Anticipar y neutralizar defensas patronales sistemáticas mediante contraargumentación específica",
+      "keywords_activacion": ["contestacion_patronal", "ofrecimiento_mejorado", "abandono_trabajo"],
+      "patron_makario_core": true
+    },
+
+    "MOD041": {
+      "id": "MOD041",
+      "nombre": "arsenal_defensivo_integral_outsourcing",
+      "categoria": "defensa_patronal_sistematica",
+      "nivel_complejidad": "experto", 
+      "activadores": [
+        "demanda_laboral_outsourcing", "reclamacion_despido",
+        "estructura_empresarial_compleja", "blindaje_jurisprudencial"
+      ],
+      "efectividad_historica": 85.0,
+      "descripcion": "Defensa multicapa sistemática: negación despido + ofrecimiento mejorado + teoría abandono",
+      "keywords_activacion": ["demanda_laboral", "outsourcing", "despido_injustificado"],
+      "patron_makario_core": true
+    },
+
+    "MOD061": {
+      "id": "MOD061",
+      "nombre": "reconocimiento_personalidad_879_LFT",
+      "categoria": "procedimiento_laboral_fundamental",
+      "nivel_complejidad": "basico",
+      "activadores": [
+        "audiencia_inicial", "reconocimiento_personalidad", 
+        "art_879_LFT", "momento_procesal_oportuno"
+      ],
+      "efectividad_historica": 90.0,
+      "descripcion": "Reconocimiento formal personalidad en momento procesal oportuno según Art. 879 LFT",
+      "keywords_activacion": ["personalidad", "art_879_LFT", "momento_procesal"],
+      "origen": "v5.0_expansion"
+    },
+
+    "MOD066": {
+      "id": "MOD066",
+      "nombre": "trigger_validacion_tesis_automatica",
+      "categoria": "automatizacion_juridica",
+      "nivel_complejidad": "experto",
+      "activadores": [
+        "cita_jurisprudencia", "tesis_sjf", "registro_digital",
+        "validacion_legal_requerida"
+      ],
+      "efectividad_historica": 98.5,
+      "descripcion": "Interceptar y validar automáticamente cualquier cita jurídica para prevenir uso de tesis inexistentes",
+      "keywords_activacion": ["tesis", "jurisprudencia", "sjf", "validacion"],
+      "machine_learning_enhanced": true,
+      "origen": "v6.0_advanced_systems"
+    },
+
+    "MOD068": {
+      "id": "MOD068", 
+      "nombre": "calculo_finiquito_liquidacion_avanzado",
+      "categoria": "laboral_calculadora",
+      "nivel_complejidad": "basico",
+      "activadores": [
+        "calculo_finiquito", "liquidacion_laboral",
+        "indemnizacion_despido", "prestaciones_laborales"
+      ],
+      "efectividad_historica": 94.7,
+      "descripcion": "Cálculo preciso de derechos laborales con activación automática de módulos de defensa",
+      "keywords_activacion": ["finiquito", "liquidacion", "indemnizacion", "prestaciones"],
+      "origen": "v6.0_advanced_systems"
+    }
+  },
+
+  "keywords_vectoriales_ultimate": {
+    "activacion_automatica_makario": [
+      "outsourcing", "casino", "documentos_blanco", "jamás_despidió", 
+      "a_quien_resulte", "magic_fortune", "winland", "c&h_outsourcing"
+    ],
+    "sectorial_casino": [
+      "runner", "inplant", "casino", "entretenimiento", 
+      "javier_torres", "aleyois_rodriguez"
+    ],
+    "defensiva_patronal": [
+      "abandono_trabajo", "ofrecimiento_mejorado", "inexistencia_relacion"
+    ],
+    "anti_evasion_makario": [
+      "multiple_entidades", "responsabilidad_solidaria", 
+      "beneficiario_directo", "cambio_razon_social"
+    ],
+    "fiscal_administrativo": [
+      "SAT", "NUT", "verificacion_domicilio", "creditos_fiscales", 
+      "TJFA", "requerimiento"
+    ],
+    "scripts_audiencia": [
+      "reconocimiento_personalidad", "objeciones_probatorias", 
+      "traslado_contraria", "testigos_domicilio", "art_879_LFT"
+    ],
+    "despido_hostil": [
+      "suspension_de_hecho", "ambiente_hostil", "nomina_retenida", 
+      "renuncia_simulada"
+    ]
+  },
+
+  "correlaciones_semanticas_ultimate": {
+    "evasion_empresarial_makario": [
+      "outsourcing", "multiple_entidades", "cambio_razon_social", 
+      "a_quien_resulte_responsable", "documentos_blanco", 
+      "c&h_outsourcing", "magic_fortune", "winland"
+    ],
+    "casino_makario_patterns": [
+      "runner", "inplant", "winland", "magic_fortune", 
+      "horarios_atipicos", "descanso_lunes", "javier_torres", 
+      "aleyois_rodriguez"
+    ],
+    "defensa_patronal_makario": [
+      "ofrecimiento_mejorado", "abandono_trabajo", "inexistencia_relacion", 
+      "excepcion_oscuridad", "jurisprudencia_imss", "jamás_despidió"
+    ],
+    "documentos_blanco_makario": [
+      "firmar_documentos_blanco", "firma_ciega", "nulidad_preventiva", 
+      "fabricacion_posterior"
+    ],
+    "fiscal_administrativo": [
+      "SAT", "requerimientos", "verificacion_domicilio", "NUT", 
+      "TJFA", "creditos_fiscales", "contencioso_fiscal"
+    ],
+    "scripts_audiencia": [
+      "art_879_LFT", "reconocimiento_personalidad", "objeciones_probatorias", 
+      "testigos_domicilio", "perfeccionamiento_documental", "traslado_contraria"
+    ],
+    "despido_hostil": [
+      "suspension_de_hecho", "ambiente_hostil", "nomina_retenida", 
+      "renuncia_simulada"
+    ]
+  },
+
+  "casos_relevantes_sample": [
+    {
+      "id": "CASO007",
+      "titulo": "Angélica Torres Castañón vs. C&H OUTSOURCING + MAGIC FORTUNE + A QUIEN RESULTE",
+      "tags": ["#outsourcing", "#casino", "#evasion_empresarial", "#documentos_blanco", "#makario_paradigmatico"],
+      "modulos_activados": ["MOD033", "MOD034", "MOD035", "MOD036"],
+      "efectividad_estimada": 0.92,
+      "patron_makario_core": true
+    },
+    {
+      "id": "CASO011", 
+      "titulo": "Respuesta Requerimiento SAT - Caso Navarro 2017",
+      "tags": ["#SAT", "#requerimiento", "#verificacion_domicilio", "#fiscal_administrativo"],
+      "modulos_activados": ["MOD051"],
+      "efectividad_real": "100% cumplimiento"
+    }
+  ],
+
+  "sistema_metricas_ultimate": {
+    "kpis_globales": {
+      "tasa_exito_general": 82.5,
+      "tiempo_promedio_resolucion": 38,
+      "casos_activos": 3,
+      "modulos_mas_efectivos": ["MOD033", "MOD034", "MOD051", "MOD061", "MOD066"],
+      "ingresos_proyectados": 625000,
+      "patrones_makario_detectados": 4,
+      "efectividad_makario_core": 92.0
+    },
+    "metricas_por_modulo": {
+      "MOD033": {
+        "casos_aplicados": 4,
+        "tasa_exito": 92.0,
+        "tiempo_promedio_resolucion": 25,
+        "efectividad_predictiva": 0.92
+      },
+      "MOD034": {
+        "casos_aplicados": 4, 
+        "tasa_exito": 88.0,
+        "tiempo_promedio_resolucion": 2,
+        "efectividad_predictiva": 0.88
+      },
+      "MOD051": {
+        "casos_aplicados": 1,
+        "tasa_exito": 100.0,
+        "tiempo_promedio_resolucion": 5,
+        "efectividad_predictiva": 0.95
+      }
+    }
+  },
+
+  "patrones_deteccion": {
+    "evasion_empresarial": {
+      "keywords": ["outsourcing", "múltiples empresas", "casino", "cambio razón social"],
+      "frases_activacion": [
+        "trabajo para outsourcing", "múltiples empresas", "casino entretenimiento",
+        "cambian de razón social", "empresa beneficiaria"
+      ],
+      "modulos_sugeridos": ["MOD033", "MOD034"]
+    },
+    "documentos_blanco": {
+      "keywords": ["documentos blanco", "firmar sin leer", "documentos vacíos"],
+      "frases_activacion": [
+        "me hicieron firmar documentos en blanco", "firmar sin leer",
+        "documentos sin contenido", "firma todo lo que te den"
+      ],
+      "modulos_sugeridos": ["MOD034"]
+    },
+    "despido_injustificado": {
+      "keywords": ["me despidieron", "terminaron contrato", "ya no trabajo"],
+      "frases_activacion": [
+        "me despidieron sin causa", "terminó mi contrato", "ya no trabajo ahí",
+        "me corrieron", "me dieron de baja"
+      ],
+      "modulos_sugeridos": ["MOD034", "MOD048"]
+    },
+    "problemas_fiscales": {
+      "keywords": ["SAT", "requerimiento", "fiscal", "CFDI", "SPEI"],
+      "frases_activacion": [
+        "el SAT me requiere", "problemas fiscales", "no dan CFDI",
+        "solo transferencias SPEI", "verificación domicilio"
+      ],
+      "modulos_sugeridos": ["MOD051"]
+    }
+  },
+
+  "configuracion_sistema": {
+    "version": "7.0.0-ULTIMATE",
+    "modo_operacion": "tactical_legal_system",
+    "machine_learning_enabled": true,
+    "validacion_juridica_automatica": true,
+    "patron_makario_detection": true,
+    "efectividad_minima_modulos": 80.0,
+    "umbral_activacion_automatica": 0.75
+  }
+}
