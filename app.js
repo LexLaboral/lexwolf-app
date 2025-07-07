@@ -156,6 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Array para almacenar casos
+    let casosCreados = [];
+
     // Crear nuevo caso
     function crearNuevoCaso(event) {
         if (event) event.preventDefault();
@@ -171,9 +174,167 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Simular creación de caso
+        // Crear objeto del caso
+        const nuevoCaso = {
+            id: Date.now().toString(),
+            cliente: clientName,
+            tipo: caseType,
+            descripcion: caseDescription,
+            titulo: obtenerTituloCaso(caseType),
+            hora: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }),
+            tags: obtenerTagsCaso(caseType),
+            estado: 'active'
+        };
+
+        // Agregar a la lista
+        casosCreados.unshift(nuevoCaso);
+        
+        // Actualizar la lista visual
+        actualizarListaCasos();
+        
         mostrarNotificacion('✅ Caso creado exitosamente');
         cerrarModalNuevoCaso();
+        
+        console.log('📋 Nuevo caso creado:', nuevoCaso);
+    }
+
+    // Obtener título según tipo
+    function obtenerTituloCaso(tipo) {
+        const titulos = {
+            'despido': 'Despido Injustificado',
+            'outsourcing': 'Evasión Outsourcing',
+            'discriminacion': 'Discriminación Laboral',
+            'finiquito': 'Cálculo Finiquito'
+        };
+        return titulos[tipo] || 'Caso Laboral';
+    }
+
+    // Obtener tags según tipo
+    function obtenerTagsCaso(tipo) {
+        const tags = {
+            'despido': ['ALTA', 'MOD034'],
+            'outsourcing': ['CRÍTICA', 'MOD033'],
+            'discriminacion': ['MEDIA', 'MOD037'],
+            'finiquito': ['BAJA', 'MOD068']
+        };
+        return tags[tipo] || ['NUEVO'];
+    }
+
+    // Actualizar lista visual de casos
+    function actualizarListaCasos() {
+        const casesList = document.getElementById('casesList');
+        if (!casesList) return;
+
+        // Limpiar lista actual
+        casesList.innerHTML = '';
+
+        // Agregar casos creados
+        casosCreados.forEach(caso => {
+            const caseElement = crearElementoCaso(caso);
+            casesList.appendChild(caseElement);
+        });
+
+        // Agregar casos por defecto
+        const casosDefault = [
+            {
+                id: '001',
+                titulo: 'Despido Injustificado',
+                hora: '15:47',
+                tags: ['ALTA', 'MOD034'],
+                descripcion: 'Despido sin causa justificada en empresa de outsourcing',
+                estado: 'active'
+            },
+            {
+                id: '002',
+                titulo: 'Terminación de Contrato',
+                hora: '14:23',
+                tags: ['MOD033'],
+                descripcion: 'Terminación simulada de contrato laboral',
+                estado: 'pending'
+            },
+            {
+                id: '003',
+                titulo: 'Evasión Empresarial',
+                hora: '10:21',
+                tags: ['RESUELTO', 'MOD033'],
+                descripcion: 'Estructura de evasión empresarial múltiple',
+                estado: 'resolved'
+            }
+        ];
+
+        casosDefault.forEach(caso => {
+            const caseElement = crearElementoCaso(caso);
+            casesList.appendChild(caseElement);
+        });
+
+        console.log(`✅ Lista actualizada con ${casosCreados.length} casos nuevos`);
+    }
+
+    // Crear elemento visual del caso
+    function crearElementoCaso(caso) {
+        const caseDiv = document.createElement('div');
+        caseDiv.className = 'case-item';
+        caseDiv.dataset.case = caso.id;
+        
+        const statusClass = `status-${caso.estado}`;
+        const tagsHtml = caso.tags.map(tag => {
+            const tagClass = obtenerClaseTag(tag);
+            return `<span class="tag ${tagClass}">${tag}</span>`;
+        }).join('');
+
+        caseDiv.innerHTML = `
+            <div class="case-status ${statusClass}"></div>
+            <div class="case-info">
+                <h4>${caso.titulo}</h4>
+                <p class="case-time">${caso.hora}</p>
+                <div class="case-tags">${tagsHtml}</div>
+            </div>
+        `;
+
+        // Agregar event listener al nuevo elemento
+        caseDiv.addEventListener('click', function() {
+            seleccionarCaso(caso);
+        });
+        caseDiv.style.cursor = 'pointer';
+
+        return caseDiv;
+    }
+
+    // Obtener clase CSS para tags
+    function obtenerClaseTag(tag) {
+        if (['ALTA', 'CRÍTICA'].includes(tag)) return 'tag-priority';
+        if (tag.startsWith('MOD')) return 'tag-module';
+        if (['RESUELTO', 'COMPLETADO'].includes(tag)) return 'tag-success';
+        return 'tag-module';
+    }
+
+    // Seleccionar caso y cargar datos
+    function seleccionarCaso(caso) {
+        console.log('📋 Seleccionando caso:', caso.titulo);
+        
+        // Remover selección anterior
+        document.querySelectorAll('.case-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Seleccionar nuevo caso
+        const caseElement = document.querySelector(`[data-case="${caso.id}"]`);
+        if (caseElement) {
+            caseElement.classList.add('active');
+        }
+
+        // Cargar descripción en el input
+        const input = document.getElementById('situationInput');
+        if (input && caso.descripcion) {
+            input.value = caso.descripcion;
+            
+            // Auto-analizar después de un momento
+            setTimeout(() => {
+                analizarSituacion();
+            }, 500);
+        }
+
+        mostrarNotificacion(`📋 Caso "${caso.titulo}" cargado`);
     }
 
     // Mostrar información de módulo
@@ -288,27 +449,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     console.log(`✅ ${arsenalItems.length} módulos del arsenal configurados`);
 
-    // Casos en sidebar
-    const caseItems = document.querySelectorAll('.case-item');
-    caseItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Remover selección anterior
-            caseItems.forEach(c => c.classList.remove('active'));
-            // Seleccionar nuevo
-            this.classList.add('active');
-            
-            // Cargar descripción del caso en el input
-            const caseTitle = this.querySelector('h4')?.textContent || '';
-            const input = document.getElementById('situationInput');
-            if (input && caseTitle) {
-                input.value = `Caso: ${caseTitle}`;
-            }
-            
-            console.log('📋 Caso seleccionado:', caseTitle);
-        });
-        item.style.cursor = 'pointer';
-    });
-    console.log(`✅ ${caseItems.length} casos configurados`);
+    // Inicializar lista de casos (esto reemplaza la configuración manual anterior)
+    actualizarListaCasos();
 
     // Atajos de teclado
     document.addEventListener('keydown', function(e) {
